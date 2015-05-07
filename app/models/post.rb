@@ -8,14 +8,15 @@ class Post < ActiveRecord::Base
                       length: { in: 50..2500 }
   validates :author,  presence: true
 
-
-  # TASK 1 HELPER METHODS:
-
   def lead_paragraph
     self.body.split("\n").first.strip
   end
 
   def content_paragraph_arr
     self.body.split("\n")[1..-1]
+  end
+
+  def published_at
+    self.created_at.in_time_zone('Eastern Time (US & Canada)').strftime('%A, %b %-d, %Y at %l:%M %p %Z')
   end
 end
