@@ -2,6 +2,6 @@
 <%= simple_form_for @post do |f| %>
   <%= f.input :header %>
   <%= f.input :body%>
-  <%= f.input :author_id, collection: @authors, label_method: :last_name, value_method: :id %>
+  <%= f.input :author_id, collection: @authors, label_method: :formatted_name, value_method: :id %>
   <%= f.submit class: 'btn btn-primary' %>
 <% end %>
