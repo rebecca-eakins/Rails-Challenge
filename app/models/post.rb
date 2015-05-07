@@ -7,4 +7,15 @@ class Post < ActiveRecord::Base
   validates :body,    presence: true,
                       length: { in: 50..2500 }
   validates :author,  presence: true
+
+
+  # TASK 1 HELPER METHODS:
+
+  def lead_paragraph
+    self.body.split("\n").first.strip
+  end
+
+  def content_paragraph_arr
+    self.body.split("\n")[1..-1]
+  end
 end
