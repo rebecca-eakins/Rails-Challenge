@@ -21,7 +21,7 @@ class Post < ActiveRecord::Base
   end
 
   def formatted_tags
-    tags.collect(&:name)
+    tags.collect(&:name).join(", ")
   end
 
   def description
