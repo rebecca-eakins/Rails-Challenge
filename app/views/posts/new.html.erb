@@ -4,5 +4,6 @@
   <%= f.input :subheader %>
   <%= f.input :body%>
   <%= f.input :author_id, collection: @authors, label_method: :formatted_name, value_method: :id %>
+  <%= f.association :tags, as: :check_boxes %>
   <%= f.submit class: 'btn btn-primary' %>
 <% end %>

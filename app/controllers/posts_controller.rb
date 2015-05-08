@@ -28,6 +28,6 @@ class PostsController < ApplicationController
 
   private
   def post_params
-    params[:post].permit(:header, :body, :subheader, :author_id)
+    params[:post].permit(:header, :body, :subheader, :author_id, tag_ids: [])
   end
 end
