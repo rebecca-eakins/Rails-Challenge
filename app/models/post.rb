@@ -9,22 +9,22 @@ class Post < ActiveRecord::Base
   validates :author,  presence: true
 
   def lead_paragraph
-    self.body.split("\n").first.strip
+    body.split("\n").first.strip
   end
 
   def content_paragraph_arr
-    self.body.split("\n")[1..-1]
+    body.split("\n")[1..-1]
   end
 
   def published_at
-    self.created_at.in_time_zone('Eastern Time (US & Canada)').strftime('%A, %b %-d, %Y at %l:%M %p %Z')
+    created_at.in_time_zone('Eastern Time (US & Canada)').strftime('%A, %b %-d, %Y at %l:%M %p %Z')
   end
 
   def formatted_tags
-    self.tags.collect {|tag| tag.name }.join(", ")
+    tags.collect(&:name)
   end
 
   def description
-    self.body.split(".")[0..1].join(". ")
+    body.split(".")[0..1].join(". ")
   end
 end
