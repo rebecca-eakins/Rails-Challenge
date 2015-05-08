@@ -31,7 +31,7 @@ These are the tasks we'd like you to complete:
 2. The date for each post says "Posted on August 24, 2013 at 9:00 PM". We'd like you to update the date to show the proper date and time that the post was made in the Eastern timezone.
 3. Currently, to show the first and last name together in the views we had to use some pretty gnarly code (`<%= [post.author.first_name, post.author.last_name].join(' ') %>`). We'd like you to refactor that view code (and any other code that needs to be rewritten/written) to make this view a bit more clear, without logic in the template. Additionally, on the new post page, instead of just showing the last name in the list of authors, please update the code to show the list of names in this format: "Michael Smith".
 4. Currently there is no subhead field on the input form on the new posts page. Please add a form field for that database field. Additionally, please make an update to the view to showcase the subhead in a semantic way.
-5. We have a real SEO problem! The SEO on the index page is fine, but on the individual post pages we want the page title to be updated using the format: `Rails Based Blog - #{POST_TITLE}`. Additionally, we want to update the `description` meta value and `keywords` meta value to be the first two lines of the body and list of tags (comma-separated), respectively.
+5. We have a real SEO problem! The SEO on the index page is fine, but on the individual post pages we want the page title to be updated using the format: `Rails Based Blog - #{POST_TITLE}`. Additionally, we want to update the `description` meta value and `keywords` meta value to be the first two sentences of the body and list of tags (comma-separated), respectively.
 
 ### Assumptions
 

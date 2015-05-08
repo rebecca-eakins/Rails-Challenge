@@ -19,4 +19,12 @@ class Post < ActiveRecord::Base
   def published_at
     self.created_at.in_time_zone('Eastern Time (US & Canada)').strftime('%A, %b %-d, %Y at %l:%M %p %Z')
   end
+
+  def formatted_tags
+    self.tags.collect {|tag| tag.name }.join(", ")
+  end
+
+  def description
+    self.body.split(".")[0..1].join(". ")
+  end
 end

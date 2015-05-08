@@ -5,6 +5,9 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
+    @page_name = "Rails Based Blog - #{@post.header}"
+    @page_description = @post.description
+    @page_keywords = @post.formatted_tags
   end
 
   def new
